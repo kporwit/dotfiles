@@ -30,7 +30,7 @@ fi
 printf "Checking whether GIT is installed..."
 if ! which git; then
     printf " GIT not installed\n"
-    exit 1
+    sudo apt-get install git -y
 fi
 printf " Found git at %s.\n Checking out Vundle..." "$(which git)"
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
@@ -39,19 +39,19 @@ printf " Done.\nChecking out tmp..."
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 printf " Done.\nInstalling shellcheck..."
-sudo apt-get install shellcheck
+sudo apt-get install shellcheck -y
 
 printf " Done.\nInstalling BASH vim plugin...\n"
 printf "Checking whether unzip is installed..."
 if ! which unzip; then
     printf " unzip not installed\n"
-    exit 1
+    sudo apt-get install unzip -y
 fi
 wget -O bash-support.zip http://www.vim.org/scripts/download_script.php?src_id=9890
 unzip bash-support.zip -d "$VIMDIR" && rm bash-support.zip #need to type filetype plugin on in vim 
 
 printf " Done.\n Installing powerline-fonts..."
-sudo apt-get install fonts-powerline
+sudo apt-get install fonts-powerline -y
 
 printf " Done.\n Copying rc files to the %s directory" "$HOME"
 cp ./.vimrc "$HOME"
