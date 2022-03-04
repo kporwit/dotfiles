@@ -25,6 +25,7 @@ Plugin 'hashivim/vim-terraform' "basic vim/terraform integration
 Plugin 'airblade/vim-gitgutter' "Plugin which shows a git iff in the gutter
 Plugin 'burnettk/vim-jenkins' "interacts with Jenkins interface via API
 Plugin 'edkolev/tmuxline.vim' "add vim-airline to tmux
+Plugin 'Yggdroot/indentline' "add lines on indentj
 " add all your plugins here (note older versions of Vundle
 " used Bundle instead of Plugin)
 
@@ -96,6 +97,9 @@ let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+"SYNTASTIC Checkers
+let g:syntastic_yaml_checkers = ['yamllint']
+let g:syntastic_yml_checkers = ['yamllint']
 
 "SEARCHING
 set hlsearch "highlight matches
@@ -160,3 +164,16 @@ au BufNewFile,BufRead *.sh set softtabstop=4
 au BufNewFile,BufRead *.sh set expandtab
 "au BufNewFile,BufRead *.sh set autoindent
 au BufNewFile,BufRead *.sh set fileformat=unix
+
+"YAML FILES SPECIFIC
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
+"au BufNewFile,BufRead *.yaml set tabstop=2
+"au BufNewFile,BufRead *.yaml set softtabstop=2
+"au BufNewFile,BufRead *.yaml set expandtab
+"au BufNewFile,BufRead *.toml set tabstop=2
+"au BufNewFile,BufRead *.toml set softtabstop=2
+"au BufNewFile,BufRead *.toml set expandtab
+"au BufNewFile,BufRead *.yml set tabstop=2
+"au BufNewFile,BufRead *.yml set softtabstop=2
+"au BufNewFile,BufRead *.yml set expandtab

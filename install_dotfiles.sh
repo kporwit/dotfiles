@@ -41,6 +41,9 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 printf " Done.\nInstalling shellcheck..."
 sudo apt-get install shellcheck -y
 
+printf " Done.\nInstalling yamllint..."
+sudo apt-get install yamllint -y
+
 printf " Done.\nInstalling BASH vim plugin...\n"
 printf "Checking whether unzip is installed..."
 if ! which unzip; then
