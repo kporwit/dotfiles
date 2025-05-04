@@ -18,7 +18,7 @@ Plugin 'tmux-plugins/vim-tmux-focus-events' "restores some commands in vim insid
 Plugin 'jnurmine/Zenburn' "Zenburn colorscheme
 Plugin 'vim-airline/vim-airline' "extended statusbar for vim
 Plugin 'vim-airline/vim-airline-themes' "extended statusbar for vim
-Plugin 'vim-syntastic/syntastic' "extended syntax checks
+Plugin 'dense-analysis/ale' "extended syntax checks (syntastic is deprecated)
 Plugin 'morhetz/gruvbox'
 Plugin 'sheerun/vim-polyglot' "A solid language pack for vim
 Plugin 'hashivim/vim-terraform' "basic vim/terraform integration
@@ -144,6 +144,7 @@ au BufNewFile,BufRead *.jenkinsfile set tabstop=2
 au BufNewFile,BufRead *.jenkinsfile set softtabstop=2
 au BufNewFile,BufRead *.jenkinsfile set expandtab
 au BufNewFile,BufRead *.jenkinsfile set autoindent
+au BufNewFile,BufRead *.jenkinsfile set fileformat=unix
 
 "TERRAFORM FILES SPECIFIC
 au BufNewFile,BufRead *.tf set tabstop=2
@@ -166,14 +167,5 @@ au BufNewFile,BufRead *.sh set expandtab
 au BufNewFile,BufRead *.sh set fileformat=unix
 
 "YAML FILES SPECIFIC
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
-"au BufNewFile,BufRead *.yaml set tabstop=2
-"au BufNewFile,BufRead *.yaml set softtabstop=2
-"au BufNewFile,BufRead *.yaml set expandtab
-"au BufNewFile,BufRead *.toml set tabstop=2
-"au BufNewFile,BufRead *.toml set softtabstop=2
-"au BufNewFile,BufRead *.toml set expandtab
-"au BufNewFile,BufRead *.yml set tabstop=2
-"au BufNewFile,BufRead *.yml set softtabstop=2
-"au BufNewFile,BufRead *.yml set expandtab
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab fileformat=unix
+autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab fileformat=unix
